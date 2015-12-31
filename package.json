@@ -10,6 +10,10 @@
   "author": "Black Tea Technologies",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3"
+    "koa": "^1.1.2",
+    "koa-body": "^1.4.0",
+    "koa-route": "^2.4.2",
+    "koa-static": "^1.5.2",
+    "mongoose": "^4.3.4"
   }
 }
