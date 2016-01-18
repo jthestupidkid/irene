@@ -63,10 +63,20 @@
     </div>
     <div class='row'>
       <div class='col-xs-12 header'>
-        <h1>Bets</h1>
+        <h1>Challenges</h1>
       </div>
       <div class='col-xs-4 col-xs-offset-4'>
         <dl class="dl-horizontal" id='challenges'>
+          
+        </dl>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-12 header'>
+        <h1>Past Challenges</h1>
+      </div>
+      <div class='col-xs-4 col-xs-offset-4'>
+        <dl class="dl-horizontal" id='pchallenges'>
           
         </dl>
       </div>
@@ -88,9 +98,14 @@
     xhttp.send();
     var challenges = JSON.parse(xhttp.responseText);
     challenges.forEach(function(v) {
-      document.getElementById('challenges').innerHTML += '<dt class="col-sm-3">' + v.score + '<\/dt><dd class="col-sm-9">' + v.desc + '</dd>'
+      if(v.dateCreated > Date.now() ) {
+        document.getElementById('pchallenges').innerHTML += '<dt class="col-sm-3">' + v.score + '<\/dt><dd class="col-sm-9">' + v.desc + '</dd>'
+      } else {
+        document.getElementById('challenges').innerHTML += '<dt class="col-sm-3">' + v.score + '<\/dt><dd class="col-sm-9">' + v.desc + '</dd>'
+      }
+      
     });
-    console.log(challenges);
+    // console.log(challenges);
     // document.getElementById('jj').innerHTML = scores.j;
     
   </script>

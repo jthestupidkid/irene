@@ -59,27 +59,6 @@ challengeSchema.methods.finish = (date, user) => {
 var user = mongoose.model('users', userSchema);
 var challenge = mongoose.model('challenges', challengeSchema);
 
-var irene = new user({
-  user: 'i',
-  score: '1',
-});
-var jj = new user({
-  user: 'j',
-  score: '1',
-});
-
-irene.save();
-jj.save();
-
-var ch1 = new challenge({
-  user: 'j',
-  score: 1,
-  desc: 'testing',
-  dateCreated: new Date(),
-});
-
-ch1.save();
-
 var routes = {
   *getScores() {
     var users = yield user.find().sort({user: 1});
