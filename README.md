@@ -1,2 +1,0 @@
-# irene
-Score and bets
